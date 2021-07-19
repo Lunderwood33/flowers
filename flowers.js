@@ -1,29 +1,34 @@
 const flowers = [
+    {
+        id: 1,
+        color: "white",
+        species: "White Rose",
+        price: .90
+    },
+    {
+        id: 2,
+        color: "red",
+        species: "Red Tulip",
+        price: 1.10
+    }
     
-        {
-            id: 1,
-            color: "White",
-            species: "Rose",
-            price: .90,
-        },
-        {
-            id: 2,
-            color: "Red",
-            species: "Tulip",
-            price: 1.10,
-        }
-
 ]
 
+const magnolia = {
+        color: "white",
+        species: "Magnolia",
+        price: .50
+}
+
 const addFlower = (flowerObject) => {
-    
-    const lastIndex = flowers.length -1
+    const lastIndex = flowers.length - 1
     const currentLastFlower = flowers[lastIndex]
-    const maxId = currentLastFlower.Id
-    const idForNewFlower = maxId +1
+    const maxId = currentLastFlower.id
+    const idForNewFlower = maxId + 1
+
     flowerObject.id = idForNewFlower
-    
     flowers.push(flowerObject)
+
     /*
         This function should add an `id` property
         to the object that was sent to the function.
@@ -38,14 +43,16 @@ const addFlower = (flowerObject) => {
 
 
 }
+addFlower(magnolia)
 
 
 const findExpensiveFlowers = () => {
     const expensiveFlowers = []  // Do not change this code
 
     for (const flower of flowers) {
-        if (flower.price >= 1) {
-            expensiveFlowers.push(flower)
+        if (flower.price >= 1.00) {
+            expensiveFlowers.push(flower);
+        
         }
     }
 
